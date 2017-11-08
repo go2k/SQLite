@@ -1,9 +1,6 @@
 package com.sabel.sqlite;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Testklasse {
 
@@ -26,6 +23,25 @@ public class Testklasse {
         System.out.println("Daten erfolgreich in db gespeichert");
         statement.close();
         connection.close();
+
+
+        connection = DriverManager.getConnection("jdbc:sqlite:d:\\Test.sqlite");
+        statement = connection.createStatement();
+
+        ResultSet resultSet = statement.executeQuery("select id, nachname, jahrgang from person");
+
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String nachname = resultSet.getString("nachname");
+            String jahrgang = resultSet.getString("jahrgang");
+            System.out.println("Person: " + id  + ", Nachname: " + nachname + ", Jahrgang: " + jahrgang );
+        }
+        resultSet.close();
+        statement.close();
+        connection.close();
+
+
+
 
     }
 }
