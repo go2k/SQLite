@@ -17,7 +17,7 @@ public class PersonService {
     }
 
     public void save(Person person) throws SQLException {
-        String sql = "insert into person VALUES (" + person.getId() + ",'" + person.getNachname() + "','" + person.getJahrgang() + "')");
+        String sql = "insert into person VALUES (" + person.getId() + ",'" + person.getNachname() + "','" + person.getJahrgang() + "')";
         this.statement.executeQuery(sql);
     }
 
