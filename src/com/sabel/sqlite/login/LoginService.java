@@ -44,10 +44,12 @@ public class LoginService {
 
     public static void main(String[] args) throws SQLException {
 
-        String root = "root";
-
         LoginService loginService = new LoginService();
-        Login login = new Login(JOptionPane.showInputDialog(null,"Bitte Loginname eingeben: "), JOptionPane.showInputDialog(null, "Bitte geben Sie ihr Passwort ein: "));
+        String loginname = JOptionPane.showInputDialog(null, "Bitte Loginname eingeben: ");
+        String passwort = JOptionPane.showInputDialog(null, "Bitte geben Sie ihr Passwort ein: ");
+
+        Login login = new Login(loginname, passwort);
+
         if (loginService.Login(login)) {
             System.out.println("Login erfolgreich");
         } else {
@@ -59,8 +61,6 @@ public class LoginService {
         } else {
             System.out.println("einloggen fehlgeschlagen");
         }
-
-
     }
 
 }
