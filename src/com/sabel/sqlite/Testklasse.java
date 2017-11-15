@@ -33,7 +33,7 @@ public class Testklasse {
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
             String nachname = resultSet.getString("nachname");
-            String jahrgang = resultSet.getString("jahrgang");
+            int jahrgang = resultSet.getInt("jahrgang");
             System.out.println("Person: " + id  + ", Nachname: " + nachname + ", Jahrgang: " + jahrgang );
         }
         resultSet.close();

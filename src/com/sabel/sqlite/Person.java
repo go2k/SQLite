@@ -12,8 +12,14 @@ public class Person {
         this.id = ++letzteID;
     }
 
-    public Person(int jahrgang, String nachname) {
+    public Person( int jahrgang, String nachname) {
         this();
+        this.jahrgang = jahrgang;
+        this.nachname = nachname;
+    }
+
+    public Person(int id, int jahrgang, String nachname) {
+        this.id = id;
         this.jahrgang = jahrgang;
         this.nachname = nachname;
     }
